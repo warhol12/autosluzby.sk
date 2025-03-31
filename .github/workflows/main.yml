@@ -14,5 +14,5 @@ on:
       username: ${{secrets.FTPUSERNAME }}
       password: ${{ secrets.FTPPASSORD }}
       protocol: ftps
-      server-dir: root/autosluzby.sk
+      server-dir: www_root/
       
