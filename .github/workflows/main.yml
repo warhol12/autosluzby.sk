@@ -13,5 +13,5 @@ name: Build and deploy
       username: ${{ secrets.FTPUSERNAME }}
       password: ${{ secrets.FTPPASSWORD }}
       protocol: ftps
-      server-dir: www_root_wide/
+      server-dir: /www_root_wide/
       
