@@ -10,8 +10,8 @@ name: Build and deploy
       uses: SamiKrkland/FTP-Deploy-Action@v4.3.4
       with:  
       server: ftp.wide.sk
-      username: ${{secrets.FTPUSERNAME }}
-      password: ${{ secrets.FTPPASSORD }}
+      username: ${{ secrets.FTPUSERNAME }}
+      password: ${{ secrets.FTPPASSWORD }}
       protocol: ftps
       server-dir: www_root_wide/
       
