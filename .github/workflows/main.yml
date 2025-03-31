@@ -4,7 +4,7 @@ name: Build and deploy
       name: Deploy
       steps:
       -name: Get latest code
-      uses: action/checkoout@v3
+      uses: action/checkout@v3
 
       -name: Sync files
       uses: SamiKrkland/FTP-Deploy-Action@v4.3.4
