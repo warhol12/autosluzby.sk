@@ -1,18 +1,24 @@
-on: push
-name: Build and deploy
-jobs:
-    web-deploy: 
-      name: Deploy
-      steps:
-      -name: Get latest code
-      uses: action/checkout@v3
+name: FTPS Test
 
-      -name: Sync files
-      uses: SamiKrkland/FTP-Deploy-Action@v4.3.4
-      with:  
-      server: ftp.wide.sk
-      username: ${{ secrets.FTPUSERNAME }}
-      password: ${{ secrets.FTPPASSWORD }}
-      protocol: ftps
-      server-dir: /www_root_wide/
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    name: 🚀 Deploy website every commit
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      - name: 📂 Sync files
+        uses: ./www_root_wide/
+        with:
+          server: ftp.wide.sk
+          username: ${{ secrets.FTPUSERNAME }}
+          password: ${{ secrets.FTPPASSWORD }}
+          protocol: ftps
+
+     
       
