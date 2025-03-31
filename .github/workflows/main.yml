@@ -1,0 +1,18 @@
+name: Build and deploy
+on:
+  push:
+    web-deploy: 
+      name: Deploy
+      steps:
+      -name: Get latest code
+      uses: action/checkoout@v3
+
+      -name: Sync files
+      uses: SamiKrkland/FTP-Deply-Action@v4.3.4
+      with:  
+      server: ftp.autosluzby.sk
+      username: ${{secrets.FTPUSERNAME }}
+      password: ${{ secrets.FTPPASSORD }}
+      protocol: ftps
+      server-dir: root/autosluzby.sk
+      
