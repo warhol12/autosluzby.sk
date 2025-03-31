@@ -1,6 +1,5 @@
+on: push
 name: Build and deploy
-on:
-  push:
     web-deploy: 
       name: Deploy
       steps:
@@ -8,11 +7,11 @@ on:
       uses: action/checkoout@v3
 
       -name: Sync files
-      uses: SamiKrkland/FTP-Deply-Action@v4.3.4
+      uses: SamiKrkland/FTP-Deploy-Action@v4.3.4
       with:  
-      server: ftp.autosluzby.sk
+      server: ftp.wide.sk
       username: ${{secrets.FTPUSERNAME }}
       password: ${{ secrets.FTPPASSORD }}
       protocol: ftps
-      server-dir: /www_root/
+      server-dir: www_root_wide/
       
